@@ -1,4 +1,4 @@
-# YahooFx
+# Yahoofx
 
 ## Foreign exchange (forex) rate scraper
 
