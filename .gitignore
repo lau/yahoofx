@@ -1,0 +1,11 @@
+*.gem
+*.rbc
+.bundle
+.config
+.DS_Store
+coverage
+pkg
+rdoc
+test/tmp
+test/version_tmp
+tmp

@@ -1,0 +1,6 @@
+$:.unshift File.dirname(__FILE__) + '/../lib'
+require 'yahoofx'
+require 'minitest/pride'
+require 'minitest/spec'
+require 'minitest/autorun'
+require 'webmock/minitest'
