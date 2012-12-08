@@ -5,14 +5,21 @@ module Yahoofx
     # First and second currency code. The parameters could be "USD" and "EUR" for instance
     def initialize(first, second)
       @first, @second = first.to_s, second.to_s
-      raise "Invalid currency code provided" unless @first.length==3 && @second.length==3
+      raise "Invalid currency code provided" unless valid_currency_code?(@first) && 
+                                                    valid_currency_code?(@second)  
     end
 
     def bid
       request_feed.scan(bid_regexp).each { |results| return results.first.to_f }
+      nil
     end
 
     protected
+      def valid_currency_code?(currency_code)
+        return true if currency_code =~ /^[a-zA-Z]{3}$/
+        false
+      end
+
       def url_for_currency_pair
         URI("http://finance.yahoo.com/q?s=#{@first}#{@second}%3Dx&ql=1")
       end
