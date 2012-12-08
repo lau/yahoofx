@@ -1,6 +1,6 @@
 require_relative "../test_helper"
 
-describe Yahoofx do
+describe Yahoofx::Pair do
   before do
     page = IO.read(File.dirname(__FILE__) + '/../fixtures/eurusd.html') 
     stub_request(:get, "http://finance.yahoo.com/q?ql=1&s=eurusd=x").
