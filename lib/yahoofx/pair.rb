@@ -1,7 +1,7 @@
 require 'net/http'
 
 module Yahoofx
-  class Pair 
+  class Pair
     # First and second currency code. The parameters could be "USD" and "EUR" for instance
     def initialize(first, second)
       @first, @second = first.to_s, second.to_s
@@ -21,7 +21,7 @@ module Yahoofx
       end
 
       def url_for_currency_pair
-        URI("http://finance.yahoo.com/q?s=#{@first}#{@second}%3Dx&ql=1")
+        URI("http://finance.yahoo.com/q?s=#{@first.downcase}#{@second.downcase}%3Dx&ql=1")
       end
 
       def request_feed

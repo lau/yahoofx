@@ -1,4 +1,9 @@
 #!/usr/bin/env ruby
 require 'yahoofx'
-raise "Usage: yahoofx [currencypair] eg. yahoofx eurusd" unless ARGV[0].length==6
-p Yahoofx::Pair.new(ARGV[0][0..2], ARGV[0][3..5]).bid
+raise "Usage: yahoofx [currencypair] eg. yahoofx eurusd" unless ARGV[0].length==6 || ARGV.join(" ") =~ /in/ 
+
+if ARGV[0].length==6
+  p Yahoofx::Pair.new(ARGV[0][0..2], ARGV[0][3..5]).bid
+else
+  p Yahoofx::Converter.new.convert(ARGV.join(" "))
+end
