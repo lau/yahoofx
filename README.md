@@ -17,6 +17,14 @@ E.g. `yahoofx eurusd` outputs 1.2925 if the price of 1 EUR is 1.2925 USD
 
 To use this in your ruby code, this would return the rate as a Float: `Yahoofx::Pair.new(:eur, :usd).bid`
 
+#### Convert amounts to other currencies
+
+Can also convert an amount of money from one currency to the other:
+`Yahoofx::Converter.new.answer("100 EUR in USD")`
+
+Or use the shell command:
+`yahoofx [amount] [from currency] in [to currency]` e.g. `yahoofx 100 EUR in USD` 
+
 ## License
 
 The MIT License (MIT)
