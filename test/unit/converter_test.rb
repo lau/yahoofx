@@ -18,6 +18,10 @@ describe Yahoofx::Converter do
       assert_equal 745.56, @converter.answer("100 EUR in DKK").to_f
     end
     
+    it "should work the same without space between amount and 'from currency'" do
+      assert_equal 745.56, @converter.answer("100EUR in DKK").to_f
+    end
+    
     it "should show currency rate when two valid currency codes are provided" do
       assert_equal 7.4556, @converter.answer("EURDKK").to_f
     end

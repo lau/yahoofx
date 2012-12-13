@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'yahoofx'
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.executables << 'yahoofx'
   s.summary     = "Gets currency rates from Yahoo Finance"
   s.description = "The gem scrapes Yahoo Finance and returns foreign exchange rates. Also comes with a shell command."

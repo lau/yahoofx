@@ -20,12 +20,12 @@ module Yahoofx
       @rate_class.new(parsed[:from_currency], parsed[:to_currency]).bid*parsed[:from_amount]
     end
 
-    # Example parameter: 100 EUR in USD
-    def parse(input_string) 
-      arr = input_string.split(/[\p{Space}]+/)
-      { :from_amount => arr[0].to_f,
-        :from_currency => arr[1],
-        :to_currency => arr[3] }
+    # Example parameter: "100 EUR in USD"
+    def parse(input_string)
+      /([\d]+)[\p{Space}]*(.*)in(.*)/ =~ input_string
+      { :from_amount => $1.to_f,
+        :from_currency => $2.strip,
+        :to_currency => $3.strip }
     end
   end
 end
