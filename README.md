@@ -1,5 +1,7 @@
 # Yahoofx
 
+[![Build Status](https://travis-ci.org/lau/yahoofx.png)](https://travis-ci.org/lau/yahoofx)
+
 ## Foreign exchange (forex) rate scraper
 
 Gets foreign currency exchange rates from Yahoo Finance.
