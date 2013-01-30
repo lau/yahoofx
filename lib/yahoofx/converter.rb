@@ -22,7 +22,7 @@ module Yahoofx
 
     # Example parameter: "100 EUR in USD"
     def parse(input_string)
-      /([\d]+)[\p{Space}]*(.*)in(.*)/ =~ input_string
+      /([\d\.]+)[\p{Space}]*(.*)in(.*)/ =~ input_string
       { :from_amount => $1.to_f,
         :from_currency => $2.strip,
         :to_currency => $3.strip }

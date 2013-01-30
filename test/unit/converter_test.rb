@@ -25,5 +25,9 @@ describe Yahoofx::Converter do
     it "should show currency rate when two valid currency codes are provided" do
       assert_equal 7.4556, @converter.answer("EURDKK").to_f
     end
+
+    it "should work with decimal in amount" do
+      assert_equal 11.92896, @converter.answer("1.6EUR in DKK").to_f
+    end
   end
 end
